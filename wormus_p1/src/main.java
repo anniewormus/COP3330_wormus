@@ -13,12 +13,4 @@ public class main {
 
     }
 }
-class Encrypter {
-    public void encrypting(){
 
-        System.out.print("encrypting");
-    }
-}
-class Decrypter {
-
-}
