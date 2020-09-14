@@ -7,7 +7,18 @@ public class main {
 
         System.out.print("Enter your number: ");
         int num = scan.nextInt();
+
+        System.out.println("Encrypted number: ");
         System.out.println("Your number is "+ num);
 
     }
+}
+class Encrypter {
+    public void encrypting(){
+
+        System.out.print("encrypting");
+    }
+}
+class Decrypter {
+
 }
