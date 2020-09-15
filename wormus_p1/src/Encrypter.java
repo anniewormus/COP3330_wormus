@@ -3,13 +3,11 @@ import java.util.Arrays;
 public class Encrypter {
 
     public Encrypter(){
-
     }
 
     public String encrypt(String num){
 
         int intNum = Integer.parseInt(num);
-
         int digits[] = new int[4];
 
         for(int i = 3; i >= 0; i--){

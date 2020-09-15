@@ -9,10 +9,16 @@ public class main {
         String num = scan.next();
 
         //create encrypter object and call encrypt function
-        Encrypter crypt = new Encrypter();
-        String encryptedNum = crypt.encrypt(num);
+        Encrypter crypty = new Encrypter();
+        String encryptedNum = crypty.encrypt(num);
 
         System.out.println("Encrypted number: " + encryptedNum);
+
+        //create encrypter object and call encrypt function
+        Decrypter cryptor = new Decrypter();
+        String decryptedNum = cryptor.decrypt(num);
+
+        System.out.println("Decrypted number: " + decryptedNum);
 
     }
 }
