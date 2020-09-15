@@ -6,10 +6,13 @@ public class main {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Enter your number: ");
-        int num = scan.nextInt();
+        String num = scan.next();
 
-        System.out.println("Encrypted number: ");
-        System.out.println("Your number is "+ num);
+        //create encrypter object and call encrypt function
+        Encrypter crypt = new Encrypter();
+        String encryptedNum = crypt.encrypt(num);
+
+        System.out.println("Encrypted number: " + encryptedNum);
 
     }
 }
