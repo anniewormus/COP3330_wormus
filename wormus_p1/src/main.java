@@ -5,6 +5,7 @@ public class main {
 
         Scanner scan = new Scanner(System.in);
 
+        //user input
         System.out.print("Enter your number: ");
         String num = scan.next();
 
@@ -14,7 +15,7 @@ public class main {
 
         System.out.println("Encrypted number: " + encryptedNum);
 
-        //create encrypter object and call encrypt function
+        //create decrypter object and call encrypt function
         Decrypter cryptor = new Decrypter();
         String decryptedNum = cryptor.decrypt(num);
 

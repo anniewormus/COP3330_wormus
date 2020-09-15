@@ -8,6 +8,7 @@ public class Decrypter {
         int intNum = Integer.parseInt(num);
         int digits[] = new int[4];
 
+        //splices integer into an array of ints
         for(int i = 3; i >= 0; i--){
             digits[i] = reverseDigitConversion(intNum%10);
             intNum = intNum/10;
@@ -23,9 +24,11 @@ public class Decrypter {
         digits[1] = digits[3];
         digits[3] = temp;
 
+        //returns a string and gets rid of wacky [], symbols
         return Arrays.toString(digits).replaceAll("\\[|\\]|,|\\s", "");
     }
 
+    //undo's encryption algorithm
     int reverseDigitConversion(int val){
         int temp = val % 10;
         temp += 3;

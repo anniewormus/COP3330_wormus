@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class Encrypter {
-
     public Encrypter(){
     }
 
@@ -10,6 +9,7 @@ public class Encrypter {
         int intNum = Integer.parseInt(num);
         int digits[] = new int[4];
 
+        //splices integer into an array of ints
         for(int i = 3; i >= 0; i--){
             digits[i] = digitConversion(intNum%10);
             intNum = intNum/10;
@@ -25,6 +25,7 @@ public class Encrypter {
         digits[1] = digits[3];
         digits[3] = temp;
 
+        //returns a string and gets rid of wacky [], symbols
         return Arrays.toString(digits).replaceAll("\\[|\\]|,|\\s", "");
     }
     //encrypt by adding 7 and modulating by 10
