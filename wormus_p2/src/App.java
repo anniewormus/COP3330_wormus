@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class App {
-    //DO NOT TOUGH OR YOU WILL BE CRUCIFIED
+    //DO NOT TOUGH OR YOU SO HELP ME
     public static void main(String[] args) {
         ArrayList<BodyMassIndex> bmiData = new ArrayList<BodyMassIndex>();
 
