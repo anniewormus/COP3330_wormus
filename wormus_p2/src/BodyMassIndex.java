@@ -2,12 +2,16 @@ public class BodyMassIndex {
     public double h;
     public double w;
     public double BMI;
+    public String category;
 
     //counstructor
     public BodyMassIndex(double height, double weight){
         h = height;
         w = weight;
+        BMI = getBMI();
+        category = getCategories();
     }
+    //calculation for bmi
     public double getBMI(){
         double h2 = h * h;
         BMI = 703 * w / h2;

@@ -1,4 +1,5 @@
 /* Andrea Wormus
+    09.28.2020
     This program calculates BMI and BMI category based on user input of weight and height values.
  */
 
@@ -23,8 +24,10 @@ public class App {
 
         displayBmiStatistics(bmiData);
     }
+    //scanner used throughout program
     public static Scanner in = new Scanner(System.in);
 
+    //sees if user wants to continue running
     private static boolean moreInput() {
         System.out.println("Would you like to calculate a BMI? (Y/N) ");
         String cont = in.nextLine();
@@ -42,6 +45,7 @@ public class App {
             System.out.println("Enter weight (in pounds): ");
             double weight = in.nextDouble();
             in.nextLine();
+            //if an unacceptable negative value is entered
             while(weight < 0) {
                 System.out.print("Wow what's your workout routine? Try again.");
                 weight = in.nextDouble();
@@ -53,6 +57,7 @@ public class App {
         System.out.println("Enter height (in inches): ");
         double height = in.nextDouble();
         in.nextLine();
+        //if an unacceptable negative value is entered
         while(height < 0) {
             System.out.print("How's the weather down there? Try again.");
             height = in.nextDouble();
@@ -60,11 +65,13 @@ public class App {
         return height;
     }
 
+    //prints current bmi info depending on height and weight
     public static void displayBmiInfo(BodyMassIndex bmi){
         System.out.println("Your BMI is: " + bmi.getBMI() +
                             "\nYou are " + bmi.getCategories());
 
     }
+    //prints average bmi of all bmi's entered
     public static void displayBmiStatistics(ArrayList<BodyMassIndex> bmiData) {
         double add = 0;
         double count = bmiData.size();
