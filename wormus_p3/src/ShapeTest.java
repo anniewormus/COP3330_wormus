@@ -25,7 +25,7 @@ class ShapeTest {
     @Test
     public void testTriangleName(){
         Shape shape = new Triangle(100, 100);
-        assertEquals("triangle", shap.getName());
+        assertEquals("triangle", shape.getName());
     }
 
     @Test
@@ -35,7 +35,7 @@ class ShapeTest {
     }
 
     @Test
-    public void testTriangleArea(){
+    public void testTriangleArea2(){
         Shape2D shape = new Triangle(0.5, 0.25);
         assertEquals(0.063, shape.getArea(), 0.001);
     }
