@@ -18,6 +18,6 @@ public class Cube extends Shape3D{
 
     @Override
     public double getVolume() {
-        return 0;
+        return length*length*length;
     }
 }

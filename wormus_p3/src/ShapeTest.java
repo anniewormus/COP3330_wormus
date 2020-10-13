@@ -100,7 +100,7 @@ class ShapeTest {
     @Test
     public void testPyramidArea(){
         Shape3D shape = new Pyramid(10, 10, 10);
-        assertEquals(232.61, shape.getArea(), 0.01);
+        assertEquals(323.61, shape.getArea(), 0.01);
     }
 
     @Test

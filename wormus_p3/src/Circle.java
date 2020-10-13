@@ -12,6 +12,6 @@ public class Circle extends Shape2D {
 
     @Override
     public double getArea() {
-        return 3.14 * radius * radius;
+        return 3.1416 * radius * radius;
     }
 }

@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Pyramid extends Shape3D{
     private double length;
     private double width;
@@ -16,12 +18,11 @@ public class Pyramid extends Shape3D{
 
     @Override
     public double getArea() {
-        Shape2D shape = new Triangle(length, height);
-        return (4 * shape.getArea()) + (length * width);
+        return (length * width) + (length * Math.sqrt(Math.pow((width/2), 2) + (height*height)))+ (width * Math.sqrt(Math.pow((length/2), 2) + height*height)); //well that was kinda rude
     }
 
     @Override
     public double getVolume() {
-        return (length * width * height) / 3;
+        return (length * width * height)/3;
     }
 }

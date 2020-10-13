@@ -13,11 +13,11 @@ public class Sphere extends Shape3D{
     @Override
     public double getArea() {
         Shape2D shape = new Circle(radius);
-        return 4 * shape.getArea();
+        return 4.0 * shape.getArea();
     }
 
     @Override
     public double getVolume() {
-        return (4/3)*(3.14)*radius*radius*radius;
+        return (4.0/3.0)*Math.PI*Math.pow(radius, 3.0);
     }
 }
