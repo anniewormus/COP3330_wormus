@@ -1,6 +1,7 @@
 public class Square extends Shape2D {
     private double length;
 
+    //constructor
     public Square(double length){
         this.length = length;
     }
@@ -10,6 +11,7 @@ public class Square extends Shape2D {
         return "square";
     }
 
+    //area: length^2
     @Override
     public double getArea() {
         return length*length;
