@@ -3,6 +3,7 @@
  * This program ahhh I'll do this later
  */
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class main {
@@ -10,29 +11,72 @@ public class main {
     private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args){
-        mainMenu();
+        operationMenu();
 
     }
     private static void mainMenu(){
+        int choice;
 
         while(true){
             try{
                 System.out.println("MAIN MENU\n1. Create a new task list\n2. Load an existing task list\n3. Exit\n");
-                int choice = in.nextInt();
-                mainMenuOpt(choice);
+                choice = in.nextInt();
+                mainMenuChoice(choice);
                 break;
             }catch(InvalidOptionException e){
                System.out.println("ERROR: The option you entered was not one of the choices. Please try again.");
+            }catch(InputMismatchException e){
+                System.out.println("ERROR: The option you entered was not one of the choices. Please try again.");
+                in.next();
             }
         }
+
+        switch(choice){
+            case 1:
+                //create new task
+                break;
+            case 2:
+                //load an existing task
+                break;
+            case 3:
+                //exit
+                break;
+        }
     }
-    private static void mainMenuOpt(int input){
-        if(!isMainMenuOptValid(input)){
+    private static void mainMenuChoice(int input){
+        if(!isMainMenuValid(input)){
             throw new InvalidOptionException("your choice is not valid; please choose one of the options");
         }
     }
-    private static boolean isMainMenuOptValid(int input){
+    private static boolean isMainMenuValid(int input){
         return input == 1 || input == 2 || input == 3;
+    }
+
+    private static void operationMenu(){
+        int choice;
+        while(true){
+            try{
+                System.out.println("OPERATION MENU\n1. View list\n2. Add a task\n" +
+                        "3. Edit a task\n4. Remove a task\n5. Mark task as completed\n" +
+                        "6. Unmark task as complete\n7. Save current list\n8. Exit to main menu");
+                choice = in.nextInt();
+                opMenuChoice(choice);
+                break;
+            }catch(InvalidOptionException e){
+                System.out.println("ERROR: The option you entered was not one of the choices. Please try again.");
+            }catch(InputMismatchException e){
+                System.out.println("ERROR: The option you entered was not one of the choices. Please try again.");
+                in.next();
+            }
+        }
+    }
+    private static void opMenuChoice(int input){
+        if(!isOpMenuValid(input)){
+            throw new InvalidOptionException("your choice is not valid; please choose one of the options");
+        }
+    }
+    private static boolean isOpMenuValid(int input){
+        return input > 0 || input < 9;
     }
     /* Main menu option with 3 options
         1) Make a new task list
