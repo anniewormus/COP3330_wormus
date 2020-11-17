@@ -10,27 +10,28 @@ public class TaskList {
 
     private List<TaskItem> taskList;
 
-    public TaskList(){
+    public TaskList() {
         taskList = new ArrayList<>();
     }
 
-    public void view(){
-            System.out.println("Current Tasks-----------");
-            for (int i = 0; i < taskList.size(); i++) {
-                TaskItem current = taskList.get(i);
+    public void view() {
+        System.out.println("Current Tasks-----------");
+        for (int i = 0; i < taskList.size(); i++) {
+            TaskItem current = taskList.get(i);
 
-                //prints out stars if task is completed
-                if (current.getCompleted()) {
-                    System.out.println(i + ") *** " + current.getDate().toString() + " " + current.getTitle() + ": "
-                            + current.getDescription());
-                } else {
-                    System.out.println(i + ") " + current);
-                }
+            //prints out stars if task is completed
+            if (current.getCompleted()) {
+                System.out.println(i + ") *** " + current.getDate().toString() + " " + current.getTitle() + ": "
+                        + current.getDescription());
+            } else {
+                System.out.println(i + ") " + current);
             }
+        }
     }
-    public void write(String filename){
-        try(Formatter output = new Formatter(filename)) {
-            for(int i = 0; i < taskList.size(); i++) {
+
+    public void write(String filename) {
+        try (Formatter output = new Formatter(filename)) {
+            for (int i = 0; i < taskList.size(); i++) {
                 TaskItem item = taskList.get(i);
                 output.format("%s;%s;%s;%s%n", item.getTitle(), item.getDescription(), item.getDate(), item.getCompleted());
             }
@@ -42,11 +43,12 @@ public class TaskList {
         }
     }
 
-    public void add(TaskItem task){
+    public void add(TaskItem task) {
         taskList.add(task);
-        System.out.println("!!!!" + task);
+        System.out.println("\\ (•◡•) / \nTask was successfully added!");
     }
-    public void edit(int index, String title, String description, LocalDate date){
+
+    public void edit(int index, String title, String description, LocalDate date) {
         TaskItem item = taskList.get(index);
 
         //String title, String description, LocalDate date
@@ -54,19 +56,23 @@ public class TaskList {
         item.setDescription(description);
         item.setDate(date);
     }
-    public void remove(int index){
+
+    public void remove(int index) {
         TaskItem task = taskList.get(index);
         taskList.remove(task);
     }
-    public void markComplete(int index){
+
+    public void markComplete(int index) {
         TaskItem task = taskList.get(index);
         task.setCompleted(true);
     }
-    public void unmarkComplete(int index){
+
+    public void unmarkComplete(int index) {
         TaskItem task = taskList.get(index);
         task.setCompleted(false);
     }
-    public int getSize(){
+
+    public int getSize() {
         return taskList.size();
     }
 }
