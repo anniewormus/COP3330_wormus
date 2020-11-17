@@ -15,11 +15,6 @@ public class main {
     private static Scanner in = new Scanner(System.in);
     private static TaskList list;
 
-//    public main(){
-//
-//        System.out.println("List created");
-//    }
-
     public static void main(String[] args){
         displayMainMenu();
     }
@@ -43,14 +38,12 @@ public class main {
             }
         }
     }
+
     private static void mainMenu(int choice){
-        //TaskList list = null;
         switch(choice){
             case 1:
                 list = new TaskList();
-                //list = new TaskList();
                 displayOperationMenu(list);
-                //create new task
                 break;
             case 2:
                     list = read(getFileName());
@@ -127,6 +120,9 @@ public class main {
                         list.unmarkComplete(getTaskItem());
                         break;
                     case 7:     //save current list
+                        System.out.println("What do you want to name your list: ");
+                        String filename = in.nextLine();
+                        list.write(filename);
                         break;
                     case 8:     //quit to main menu
                         return;
@@ -174,25 +170,30 @@ public class main {
         return file;
     }
     private static TaskList read(String file){
-        TaskList temp = new TaskList();
-        try{
-            File taskListFile = new File(file);
-            Scanner infile = new Scanner(taskListFile);
+        System.out.println("FILE NAME: " + file);
+        while(true){
+            try {
+                TaskList temp = new TaskList();
+                File taskListFile = new File(file);
+                Scanner infile = new Scanner(taskListFile);
+                infile.useDelimiter(";");
+                while (infile.hasNext()) {
+                    String title = infile.next();
+                    String description = infile.next();
+                    String date = infile.next();
+                    boolean complete = Boolean.parseBoolean(infile.next());
+                    TaskItem newItem = new TaskItem(title, description, LocalDate.parse(date), complete);
+                    temp.add(newItem);
 
-            while(infile.hasNext()){
-                String title = infile.next();
-                String description = infile.next();
-                LocalDate date = LocalDate.parse(infile.next());
-                boolean complete = Boolean.parseBoolean(infile.next());
-                TaskItem newItem = new TaskItem(title, description, date, complete);
-                temp.add(newItem);
+                }
+                return temp;
+            } catch (FileNotFoundException e) {
+                System.out.println("The file was not found. Please make sure you entered the name correctly.");
             }
-
-        } catch(FileNotFoundException e){
-            System.out.println("The file was not found. Please make sure you entered the name correctly.");
         }
-        return temp;
+
     }
+
     private static String getTitle(){
         while(true){
             try{
