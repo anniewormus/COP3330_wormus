@@ -231,7 +231,7 @@ public class main {
 
     //title must be at least one character in length
     private static void isTitleValid(String title){
-        if(title.length() < 1){
+        if(title.length() < 1 || title.equals("")){
             throw new InvalidTitleException("ERROR: Title must be at least one character or more in length.");
         }
     }

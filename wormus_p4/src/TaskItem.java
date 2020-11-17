@@ -8,7 +8,11 @@ public class TaskItem {
     private boolean completed;
 
     TaskItem(String title, String description, LocalDate date, boolean completed) {
-        this.title = title;
+        if(title.length() < 1 || title.equals("")){
+            throw new InvalidTitleException("ERROR: Title must be at least one character or more in length.");
+        }else{
+            this.title = title;
+        }
         this.description = description;
         this.date = date;
         this.completed = completed;
@@ -19,7 +23,12 @@ public class TaskItem {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        if(title.length() < 1 || title.equals("")){
+            throw new InvalidTitleException("ERROR: Title must be at least one character or more in length.");
+        }else{
+            this.title = title;
+        }
+
     }
 
     public String getDescription() {
