@@ -9,12 +9,16 @@ import java.util.Scanner;
 public class main {
 
     private static Scanner in = new Scanner(System.in);
+    private static TaskList list;
+
+    public main(){
+        list = new TaskList();
+    }
 
     public static void main(String[] args){
-        operationMenu();
-
+        displayMainMenu();
     }
-    private static void mainMenu(){
+    private static void displayMainMenu(){
         int choice;
 
         while(true){
@@ -22,6 +26,7 @@ public class main {
                 System.out.println("MAIN MENU\n1. Create a new task list\n2. Load an existing task list\n3. Exit\n");
                 choice = in.nextInt();
                 mainMenuChoice(choice);
+                mainMenu(choice);
                 break;
             }catch(InvalidOptionException e){
                System.out.println("ERROR: The option you entered was not one of the choices. Please try again.");
@@ -30,9 +35,13 @@ public class main {
                 in.next();
             }
         }
-
+    }
+    private static void mainMenu(int choice){
+        //TaskList list = null;
         switch(choice){
             case 1:
+                //list = new TaskList();
+                displayOperationMenu(list);
                 //create new task
                 break;
             case 2:
@@ -52,7 +61,7 @@ public class main {
         return input == 1 || input == 2 || input == 3;
     }
 
-    private static void operationMenu(){
+    private static void displayOperationMenu(TaskList list){
         int choice;
         while(true){
             try{
@@ -60,7 +69,7 @@ public class main {
                         "3. Edit a task\n4. Remove a task\n5. Mark task as completed\n" +
                         "6. Unmark task as complete\n7. Save current list\n8. Exit to main menu");
                 choice = in.nextInt();
-                opMenuChoice(choice);
+                opMenuChoice(choice, list);
                 break;
             }catch(InvalidOptionException e){
                 System.out.println("ERROR: The option you entered was not one of the choices. Please try again.");
@@ -70,9 +79,29 @@ public class main {
             }
         }
     }
-    private static void opMenuChoice(int input){
+    private static void opMenuChoice(int input, TaskList list){
         if(!isOpMenuValid(input)){
             throw new InvalidOptionException("your choice is not valid; please choose one of the options");
+        }else{
+            switch(input){
+                case 1:     //view list
+                    list.view();
+                    break;
+                case 2:     //add item
+                    break;
+                case 3:     //edit item
+                    break;
+                case 4:     //remove item
+                    break;
+                case 5:     //mark item as completed
+                    break;
+                case 6:     //unmark an item
+                    break;
+                case 7:     //save current list
+                    break;
+                case 8:     //quit to main menu
+                    break;
+            }
         }
     }
     private static boolean isOpMenuValid(int input){
