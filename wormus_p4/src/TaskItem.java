@@ -8,7 +8,10 @@ public class TaskItem {
     private boolean completed;
 
     TaskItem(String title, String description, LocalDate date, boolean completed){
-
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.completed = completed;
     }
     public String getTitle( ){
         return this.title;
@@ -35,4 +38,8 @@ public class TaskItem {
         this.completed = completed;
     }
 
+    @Override
+    public String toString() {
+        return ("[" + date + "] " +  title + ": " + description);
+    }
 }

@@ -31,6 +31,7 @@ public class main {
             try{
                 System.out.println("MAIN MENU\n1. Create a new task list\n2. Load an existing task list\n3. Exit\n");
                 choice = in.nextInt();
+                in.nextLine();
                 mainMenuChoice(choice);
                 mainMenu(choice);
                 break;
@@ -58,7 +59,7 @@ public class main {
                 break;
             case 3:
                 //exit
-                return;
+                System.exit(0);
         }
     }
     private static void mainMenuChoice(int input){
@@ -78,6 +79,7 @@ public class main {
                         "3. Edit a task\n4. Remove a task\n5. Mark task as completed\n" +
                         "6. Unmark task as complete\n7. Save current list\n8. Exit to main menu");
                 choice = in.nextInt();
+                in.nextLine();
                 if(choice == 8){
                     displayMainMenu();
                 }
@@ -135,6 +137,7 @@ public class main {
         return input > 0 || input < 9;
     }
     private static TaskItem addTaskItem(){
+        System.out.println("in add task");
                 String title = getTitle();
                 String desc = getDescription();
                 LocalDate date = getdate();
@@ -145,6 +148,7 @@ public class main {
             try {
                 System.out.println("Which item would you like to edit: ");
                 int item = in.nextInt();
+                in.nextLine();
                 return item;
             } catch (InputMismatchException e) {
                 System.out.println("ERROR: Please enter the number of the task you would like to edit.");
@@ -156,6 +160,7 @@ public class main {
         while (true) {
             try {
                 int item = in.nextInt();
+                in.nextLine();
                 return item;
             } catch (InputMismatchException e) {
                 System.out.println("ERROR: Please enter the number of the task you would like to edit.");
@@ -193,6 +198,7 @@ public class main {
             try{
                 System.out.println("Title: ");
                 String title = in.nextLine();
+
                 return title;
             } catch (InputMismatchException e){
                 System.out.println("ERROR: Wrong input type. Please type the name of the title.");

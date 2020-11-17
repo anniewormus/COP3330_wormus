@@ -15,22 +15,18 @@ public class TaskList {
     }
 
     public void view(){
-
-        while(!taskList.isEmpty()){//prints out task list
             System.out.println("Current Tasks-----------");
             for (int i = 0; i < taskList.size(); i++) {
                 TaskItem current = taskList.get(i);
 
                 //prints out stars if task is completed
                 if (current.getCompleted()) {
-                    System.out.println(i + ") *** " + current.getDate() + " " + current.getTitle() + ": "
+                    System.out.println(i + ") *** " + current.getDate().toString() + " " + current.getTitle() + ": "
                             + current.getDescription());
                 } else {
-                    System.out.println(i + ") " + current.getDate() + " " + current.getTitle() + ": "
-                            + current.getDescription());
+                    System.out.println(i + ") " + current);
                 }
             }
-        }
     }
     public void write(String filename){
         try(Formatter output = new Formatter(filename)) {
@@ -48,6 +44,7 @@ public class TaskList {
 
     public void add(TaskItem task){
         taskList.add(task);
+        System.out.println("!!!!" + task);
     }
     public void edit(int index, String title, String description, LocalDate date){
         TaskItem item = taskList.get(index);
