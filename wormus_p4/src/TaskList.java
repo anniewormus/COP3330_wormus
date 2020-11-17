@@ -15,18 +15,20 @@ public class TaskList {
     }
 
     public void view(){
-        //prints out task list
-        System.out.println("Current Tasks-----------");
-        for(int i = 0; i < taskList.size(); i++){
-            TaskItem current = taskList.get(i);
 
-            //prints out stars if task is completed
-            if(current.getCompleted()){
-                System.out.println(i + ") *** " + current.getDate() + " " + current.getTitle() + ": "
-                        + current.getDescription());
-            }else {
-                System.out.println(i + ") " + current.getDate() + " " + current.getTitle() + ": "
-                        + current.getDescription());
+        while(!taskList.isEmpty()){//prints out task list
+            System.out.println("Current Tasks-----------");
+            for (int i = 0; i < taskList.size(); i++) {
+                TaskItem current = taskList.get(i);
+
+                //prints out stars if task is completed
+                if (current.getCompleted()) {
+                    System.out.println(i + ") *** " + current.getDate() + " " + current.getTitle() + ": "
+                            + current.getDescription());
+                } else {
+                    System.out.println(i + ") " + current.getDate() + " " + current.getTitle() + ": "
+                            + current.getDescription());
+                }
             }
         }
     }
@@ -47,18 +49,27 @@ public class TaskList {
     public void add(TaskItem task){
         taskList.add(task);
     }
-    public void edit(TaskItem item, String title, String description, LocalDate date){
+    public void edit(int index, String title, String description, LocalDate date){
+        TaskItem item = taskList.get(index);
+
+        //String title, String description, LocalDate date
         item.setTitle(title);
         item.setDescription(description);
         item.setDate(date);
     }
-    public void remove(TaskItem task){
+    public void remove(int index){
+        TaskItem task = taskList.get(index);
         taskList.remove(task);
     }
-    public void markComplete(TaskItem task){
+    public void markComplete(int index){
+        TaskItem task = taskList.get(index);
         task.setCompleted(true);
     }
-    public void unmarkComplete(TaskItem task){
+    public void unmarkComplete(int index){
+        TaskItem task = taskList.get(index);
         task.setCompleted(false);
+    }
+    public int getSize(){
+        return taskList.size();
     }
 }
