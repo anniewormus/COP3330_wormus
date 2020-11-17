@@ -3,6 +3,9 @@
  * This program ahhh I'll do this later
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -18,6 +21,7 @@ public class main {
     public static void main(String[] args){
         displayMainMenu();
     }
+
     private static void displayMainMenu(){
         int choice;
 
@@ -45,6 +49,8 @@ public class main {
                 //create new task
                 break;
             case 2:
+                    list = read(getFileName());
+                    displayOperationMenu(list);
                 //load an existing task
                 break;
             case 3:
@@ -88,14 +94,23 @@ public class main {
                     list.view();
                     break;
                 case 2:     //add item
+                    list.add(getTaskItem());
                     break;
                 case 3:     //edit item
+                    list.view();
+                    list.edit(getTaskItem());
                     break;
                 case 4:     //remove item
+                    list.view();
+                    list.remove(getTaskItem);
                     break;
                 case 5:     //mark item as completed
+                    list.view();
+                    list.markComplete(getTaskItem);
                     break;
                 case 6:     //unmark an item
+                    list.view();
+                    list.unmarkComplete(getTaskItem);
                     break;
                 case 7:     //save current list
                     break;
@@ -107,34 +122,29 @@ public class main {
     private static boolean isOpMenuValid(int input){
         return input > 0 || input < 9;
     }
-    /* Main menu option with 3 options
-        1) Make a new task list
-        2) Load an existing task list
-        3) Quit
-       Operation menu 8 options
-        1. View list
-        2. Add task
-        3. Edit task
-        4. Remove task
-        5. Mark task as completed
-        6. Unmark task as completed
-        7. save current list
-        8. Exit to main menu
+    private static String getFileName(){
+        System.out.println("Enter the filename to load: ");
+        String file = in.nextLine();
+        return file;
+    }
+    private static TaskList read(String file){
+        TaskList temp = new TaskList();
+        try{
+            File taskListFile = new File(file);
+            Scanner in = new Scanner(taskListFile);
 
-     */
-    /*create an array list of task objects
-    task object contains a title
-        check that title has at least one or more characters before adding with
-        an exception
-    task object contains a description
-        This is optional, task doesn't need to have any characters in it's description
-    task object contains a due date
-        Should be a string in the format YYYY-MM-DD
-        Have a throws exception to catch any dates not in this format
-        **if you want to be extra check that date has to be in the future/or today
+            while(in.hasNext()){
+                String title = in.next();
+                String description = in.next();
+                LocalDate date = LocalDate.parse(in.next());
+                boolean complete = Boolean.parseBoolean(in.next());
+                TaskItem newItem = new TaskItem(title, description, date, complete);
+                temp.add(newItem);
+            }
 
-    create new task list
-
-     */
-
+        } catch(FileNotFoundException e){
+            System.out.println("The file was not found. Please make sure you entered the name correctly.");
+        }
+        return temp;
+    }
 }

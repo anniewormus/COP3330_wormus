@@ -1,6 +1,10 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.List;
+import java.util.Scanner;
 
 public class TaskList {
 
@@ -26,9 +30,20 @@ public class TaskList {
             }
         }
     }
-    public void save(){
+    public void write(String filename){
+        try(Formatter output = new Formatter(filename)) {
+            for(int i = 0; i < taskList.size(); i++) {
+                TaskItem item = taskList.get(i);
+                output.format("%s;%s;%s;%s%n", item.getTitle(), item.getDescription(), item.getDate(), item.getCompleted());
+            }
 
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to find the file...");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
     public void add(TaskItem task){
         taskList.add(task);
     }
