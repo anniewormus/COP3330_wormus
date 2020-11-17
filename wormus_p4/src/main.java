@@ -95,22 +95,22 @@ public class main {
                     break;
                 case 3:     //edit item
                     list.view();
-                    list.edit(editTaskItem(), getTitle(), getDescription(), getdate());
+                    list.edit(editTaskItem(list), getTitle(), getDescription(), getdate());
                     break;
                 case 4:     //remove item
                     list.view();
                     System.out.println("Which task would you like to remove: ");
-                    list.remove(getTaskItem());
+                    list.remove(getTaskItem(list));
                     break;
                 case 5:     //mark item as completed
                     list.view();
                     System.out.println("Which task would you like to complete: ");
-                    list.markComplete(getTaskItem());
+                    list.markComplete(getTaskItem(list));
                     break;
                 case 6:     //unmark an item
                     list.view();
                     System.out.println("Which task would you like to un-complete: ");
-                    list.unmarkComplete(getTaskItem());
+                    list.unmarkComplete(getTaskItem(list));
                     break;
                 case 7:     //save current list
                     System.out.println("What do you want to name your list: ");
@@ -135,13 +135,20 @@ public class main {
         return new TaskItem(title, desc, date, false);
     }
 
-    private static int editTaskItem() {
+    private static int editTaskItem(TaskList list) {
         while (true) {
             try {
                 System.out.println("Which item would you like to edit: ");
                 int item = in.nextInt();
                 in.nextLine();
+                isTaskValid(item, list);
                 return item;
+            } catch (InvalidTaskSelection e) {
+                System.out.println("◉_◉ ERROR: The task you entered doesn't exist yet. PLease enter a valid task number, or press x to go to Operation Menu.");
+                String next = in.next();
+                if(next.equalsIgnoreCase("x")){
+                    displayOperationMenu(list);
+                }
             } catch (InputMismatchException e) {
                 System.out.println("◉_◉ ERROR: Please enter the number of the task you would like to edit.");
                 in.nextLine();
@@ -149,12 +156,25 @@ public class main {
         }
     }
 
-    private static int getTaskItem() {
+    private static void isTaskValid(int item, TaskList list){
+        if(item >= list.getSize()){
+            throw new InvalidTaskSelection("◉_◉ ERROR: The task you entered doesn't exist yet. PLease enter a valid task number.");
+        }
+    }
+
+    private static int getTaskItem(TaskList list) {
         while (true) {
             try {
                 int item = in.nextInt();
                 in.nextLine();
+                isTaskValid(item, list);
                 return item;
+            } catch (InvalidTaskSelection e) {
+                System.out.println("◉_◉ ERROR: The task you entered doesn't exist yet. PLease enter a valid task number, or press x to go to Operation Menu.");
+                String next = in.next();
+                if(next.equalsIgnoreCase("x")){
+                    displayOperationMenu(list);
+                }
             } catch (InputMismatchException e) {
                 System.out.println("◉_◉ ERROR: Please enter the number of the task you would like to edit.");
                 in.nextLine();

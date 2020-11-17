@@ -75,4 +75,12 @@ public class TaskList {
     public int getSize() {
         return taskList.size();
     }
+
+    public int size() {
+        return taskList.size();
+    }
+
+    public TaskItem get(int i) {
+        return taskList.get(i);
+    }
 }
