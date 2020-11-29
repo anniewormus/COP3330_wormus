@@ -13,46 +13,89 @@ import java.util.Scanner;
 public class main {
 
     private static Scanner in = new Scanner(System.in);
-    private static TaskList list;
+    private static TaskList Tlist;
+    private static ContactList Clist;
 
     public static void main(String[] args) {
-        displayMainMenu();
+        displayAppMenu();
     }
 
-    private static void displayMainMenu() {
-        while (true) {
-            try {
-                System.out.println("MAIN MENU\n1. Create a new task list\n2. Load an existing task list\n3. Exit");
+    private static void displayAppMenu(){
+        while(true){
+            try{
+                System.out.println("SELECT YOUR APPLICATION\n1. Task List\n2. Contact List\n3. Quit");
                 int choice = in.nextInt();
-                in.nextLine();      //resets after nextInt for a string entry
-                isMainMenuValid(choice);
-                mainMenu(choice);
+                in.nextLine();          //resets after nextInt for a string entry
+                isMenuValid(choice);
+                applicationMenu(choice);
                 break;
-            } catch (InvalidOptionException e) {
-                System.out.println("◉_◉ ERROR: The option you entered was not one of the choices. Please try again.");
+            }catch (InvalidOptionException e){
+                System.out.println("ERROR: The option you entered was not one of the choices. Please try again.");
             } catch (InputMismatchException e) {
-                System.out.println("◉_◉ ERROR: What you entered wasn't even an option. Please try again.");
+                System.out.println("ERROR: Please enter one of the number options. Please try again.");
                 in.nextLine();
             }
         }
     }
 
-    private static void mainMenu(int choice) {
-        switch (choice) {
+    private static void applicationMenu(int input){
+        int choice;
+        switch(input){
             case 1:
-                list = new TaskList();
-                displayOperationMenu(list);
+                choice = displayMainMenu();
+                taskMainMenu(choice);
                 break;
             case 2:
-                list = read(getFileName());
-                displayOperationMenu(list);
+                choice = displayMainMenu();
+                contactMainMenu(choice);
+                break;
+        }
+    }
+
+    private static int displayMainMenu() {
+        while (true) {
+            try {
+                System.out.println("MAIN MENU\n1. Create a new list\n2. Load an existing list\n3. Exit");
+                int choice = in.nextInt();
+                in.nextLine();      //resets after nextInt for a string entry
+                isMenuValid(choice);
+                return choice;
+            } catch (InvalidOptionException e) {
+                System.out.println("ERROR: The option you entered was not one of the choices. Please try again.");
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR: Please enter one of the number options. Please try again.");
+                in.nextLine();
+            }
+        }
+    }
+
+    private static void taskMainMenu(int input) {
+        switch (input) {
+            case 1:
+                Tlist = new TaskList();
+                displayOperationMenu(Tlist);
+                break;
+            case 2:
+                Tlist = read(getFileName());
+                displayOperationMenu(Tlist);
                 break;
             case 3:
                 System.exit(0);
         }
     }
 
-    private static void isMainMenuValid(int input) {
+    private static void contactMainMenu(int input){
+        switch(input){
+            case 1:
+                //create new contact list
+            case 2:
+                //load existing contact list
+            case 3:
+                System.exit(0);
+        }
+    }
+
+    private static void isMenuValid(int input) {
         if (!(input == 1 || input == 2 || input == 3)) {
             throw new InvalidOptionException("◉_◉ ERROR: Your choice is not valid; please choose one of the options");
         }
@@ -71,7 +114,7 @@ public class main {
                 }
                 isOpMenuValid(choice);
                 opMenu(choice, list);
-               // break;
+                // break;
             } catch (InvalidOptionException e) {
                 System.out.println("◉_◉ ERROR: The number you entered was not one of the choices. Please try again.");
             } catch (InputMismatchException e) {
@@ -82,44 +125,44 @@ public class main {
     }
 
     private static void opMenu(int input, TaskList list) {
-            switch (input) {
-                case 1:     //view list
-                    if (list.getSize() > 0) {
-                        list.view();
-                    } else {
-                        System.out.println("¯\\_(ツ)_/¯ You don't have any items to print");
-                    }
-                    break;
-                case 2:     //add item
-                    list.add(addTaskItem());
-                    break;
-                case 3:     //edit item
+        switch (input) {
+            case 1:     //view list
+                if (list.getSize() > 0) {
                     list.view();
-                    list.edit(editTaskItem(list), getTitle(), getDescription(), getdate());
-                    break;
-                case 4:     //remove item
-                    list.view();
-                    System.out.println("Which task would you like to remove: ");
-                    list.remove(getTaskItem(list));
-                    break;
-                case 5:     //mark item as completed
-                    list.view();
-                    System.out.println("Which task would you like to complete: ");
-                    list.markComplete(getTaskItem(list));
-                    break;
-                case 6:     //unmark an item
-                    list.view();
-                    System.out.println("Which task would you like to un-complete: ");
-                    list.unmarkComplete(getTaskItem(list));
-                    break;
-                case 7:     //save current list
-                    System.out.println("What do you want to name your list: ");
-                    String filename = in.nextLine();
-                    list.write(filename);
-                    break;
-                case 8:     //quit to main menu
-                    return;
-            }
+                } else {
+                    System.out.println("¯\\_(ツ)_/¯ You don't have any items to print");
+                }
+                break;
+            case 2:     //add item
+                list.add(addTaskItem());
+                break;
+            case 3:     //edit item
+                list.view();
+                list.edit(editTaskItem(list), getTitle(), getDescription(), getdate());
+                break;
+            case 4:     //remove item
+                list.view();
+                System.out.println("Which task would you like to remove: ");
+                list.remove(getTaskItem(list));
+                break;
+            case 5:     //mark item as completed
+                list.view();
+                System.out.println("Which task would you like to complete: ");
+                list.markComplete(getTaskItem(list));
+                break;
+            case 6:     //unmark an item
+                list.view();
+                System.out.println("Which task would you like to un-complete: ");
+                list.unmarkComplete(getTaskItem(list));
+                break;
+            case 7:     //save current list
+                System.out.println("What do you want to name your list: ");
+                String filename = in.nextLine();
+                list.write(filename);
+                break;
+            case 8:     //quit to main menu
+                return;
+        }
     }
 
     private static void isOpMenuValid(int input) {
