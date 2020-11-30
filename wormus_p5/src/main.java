@@ -1,6 +1,8 @@
-/* What up it's Andrea Wormus
- * 11/12/2020
- * This program ahhh I'll do this later
+/* Andrea Wormus
+ * 11/30/2020
+ * This program allows the user to create either a to-do list or a contact list.
+ * The items in either list are saved in a file so the user can pull up a previos list after
+ * program completes.
  */
 
 import java.io.File;
