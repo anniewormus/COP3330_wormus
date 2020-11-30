@@ -75,11 +75,11 @@ public class main {
         switch (input) {
             case 1:
                 Tlist = new TaskList();
-                displayOperationMenu(Tlist);
+                displayTaskOperationMenu(Tlist);
                 break;
             case 2:
-                Tlist = read(getFileName());
-                displayOperationMenu(Tlist);
+                Tlist = readTaskList(getFileName());
+                displayTaskOperationMenu(Tlist);
                 break;
             case 3:
                 System.exit(0);
@@ -89,8 +89,11 @@ public class main {
     private static void contactMainMenu(int input){
         switch(input){
             case 1:
+                Clist = new ContactList();
+
                 //create new contact list
             case 2:
+                Clist = readContactList(getFileName());
                 //load existing contact list
             case 3:
                 System.exit(0);
@@ -103,7 +106,7 @@ public class main {
         }
     }
 
-    private static void displayOperationMenu(TaskList list) {
+    private static void displayTaskOperationMenu(TaskList list) {
         while (true) {
             try {
                 System.out.println("OPERATION MENU\n1. View list\n2. Add a task\n" +
@@ -233,7 +236,7 @@ public class main {
         return file;
     }
 
-    private static TaskList read(String file) {
+    private static TaskList readTaskList(String file) {
         while (true) {
             try {
                 TaskList temp = new TaskList();
@@ -251,6 +254,33 @@ public class main {
                 return temp;
             } catch (FileNotFoundException e) {
                 System.out.println("(╯°□°）╯︵ ┻━┻ The file was not found. Please make sure you entered the name correctly.");
+                in.nextLine();
+            }
+        }
+
+    }
+
+    private static ContactList readContactList(String file) {
+        while (true) {
+            try {
+                ContactList temp = new ContactList();
+                File contactListFile = new File(file);
+                Scanner infile = new Scanner(contactListFile);
+                infile.useDelimiter(";");
+                while (infile.hasNext()) {
+                    String fname = infile.next();
+                    String lname = infile.next();
+                    String email = infile.next();
+                    String phonenum = infile.next();
+                    ContactItem newItem = new ContactItem(fname, lname, email, phonenum);
+                    temp.add(newItem);
+                }
+                return temp;
+            } catch (FileNotFoundException e) {
+                System.out.println("(╯°□°）╯︵ ┻━┻ The file was not found. Please make sure you entered the name correctly.");
+                in.nextLine();
+            } catch (InvalidContactItemException e) {
+                System.out.println("ERROR: Invalid contact item encountered.");
                 in.nextLine();
             }
         }
