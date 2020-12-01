@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class app {
+public class App {
 
     private static Scanner in = new Scanner(System.in);
     private static TaskList Tlist;
