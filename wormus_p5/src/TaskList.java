@@ -33,7 +33,7 @@ public class TaskList {
         try (Formatter output = new Formatter(filename)) {
             for (int i = 0; i < taskList.size(); i++) {
                 TaskItem item = taskList.get(i);
-                output.format("%s;%s;%s;%s%n", item.getTitle(), item.getDescription(), item.getDate(), item.getCompleted());
+                output.format("%s%n%s%n%s%n%s%n", item.getTitle(), item.getDescription(), item.getDate(), item.getCompleted());
             }
 
         } catch (FileNotFoundException e) {

@@ -21,7 +21,7 @@ public class ContactList{
         try (Formatter output = new Formatter(filename)) {
             for (int i = 0; i < contactList.size(); i++) {
                 ContactItem item = contactList.get(i);
-                output.format("%s;%s;%s;%s%n", item.getFirstName(), item.getLastName(), item.getPhoneNumber(), item.getEmail());
+                output.format("%s%n%s%n%s%n%s%n", item.getFirstName(), item.getLastName(), item.getPhoneNumber(), item.getEmail());
             }
 
         } catch (FileNotFoundException e) {
@@ -42,6 +42,7 @@ public class ContactList{
             contactCheck(fname, lname, phonenum, email);
         } catch (InvalidContactItemException e) {
             System.out.println("ERROR: You must enter at least one field.");
+            return;
         }
 
         item.setFirstName(fname);

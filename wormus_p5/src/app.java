@@ -169,23 +169,41 @@ public class app {
                 System.out.println("Task successfully added!");
                 break;
             case 3:     //edit item
-                list.view();
-                list.edit(editTaskItem(list), getTitle(), getDescription(), getdate());
+                if (list.getSize() > 0) {
+                    list.view();
+                    list.edit(editTaskItem(list), getTitle(), getDescription(), getdate());
+                } else {
+                    System.out.println("¯\\_(ツ)_/¯ You don't have any items to edit");
+                }
                 break;
             case 4:     //remove item
-                list.view();
-                System.out.println("Which task would you like to remove: ");
-                list.remove(getTaskItem(list));
+                if (list.getSize() > 0) {
+                    list.view();
+                    System.out.println("Which task would you like to remove: ");
+                    list.remove(getTaskItem(list));
+                } else {
+                    System.out.println("¯\\_(ツ)_/¯ You don't have any items to remove");
+                }
+
                 break;
             case 5:     //mark item as completed
-                list.view();
-                System.out.println("Which task would you like to complete: ");
-                list.markComplete(getTaskItem(list));
+                if (list.getSize() > 0) {
+                    list.view();
+                    System.out.println("Which task would you like to complete: ");
+                    list.markComplete(getTaskItem(list));
+                } else {
+                    System.out.println("¯\\_(ツ)_/¯ You don't have any items to complete");
+                }
+
                 break;
             case 6:     //unmark an item
-                list.view();
-                System.out.println("Which task would you like to un-complete: ");
-                list.unmarkComplete(getTaskItem(list));
+                if (list.getSize() > 0) {
+                    list.view();
+                    System.out.println("Which task would you like to un-complete: ");
+                    list.unmarkComplete(getTaskItem(list));
+                } else {
+                    System.out.println("¯\\_(ツ)_/¯ You don't have any items");
+                }
                 break;
             case 7:     //save current list
                 System.out.println("What do you want to name your list: ");
@@ -316,7 +334,7 @@ public class app {
                 if (list.getSize() > 0) {
                     list.view();
                 } else {
-                    System.out.println("¯\\_(ツ)_/¯ You don't have any items to print");
+                    System.out.println("¯\\_(ツ)_/¯ You don't have any contacts to view");
                 }
                 break;
             case 2:     //add item
@@ -324,12 +342,23 @@ public class app {
                 System.out.println("Contact added successfully!");
                 break;
             case 3:     //edit item
-                list.view();
-                list.edit(editContactItem(list), getFirstName(), getLastName(), getPhoneNumber(), getEmail());
+                if (list.getSize() > 0) {
+                    list.view();
+                    list.edit(editContactItem(list), getFirstName(), getLastName(), getPhoneNumber(), getEmail());
+                } else {
+                    System.out.println("¯\\_(ツ)_/¯ You don't have any contacts to edit");
+                }
+
                 break;
             case 4:     //remove item
-                list.view();
-                list.remove(getContactItem(list));
+                if (list.getSize() > 0) {
+                    list.view();
+                    list.remove(getContactItem(list));
+                    System.out.println("Contact successfully removed");
+                } else {
+                    System.out.println("¯\\_(ツ)_/¯ You don't have any contacts to remove");
+                }
+
                 break;
             case 5:     //save current list
                 System.out.println("What do you want to name your list: ");
@@ -481,16 +510,16 @@ public class app {
                 TaskList temp = new TaskList();
                 File taskListFile = new File(file);
                 Scanner infile = new Scanner(taskListFile);
-                infile.useDelimiter(";");
-                while (infile.hasNext()) {
-                    String title = infile.next();
-                    String description = infile.next();
-                    String date = infile.next();
-                    boolean complete = Boolean.parseBoolean(infile.next());
+
+                while (infile.hasNextLine()) {
+                    String title = infile.nextLine();
+                    String description = infile.nextLine();
+                    String date = infile.nextLine();
+                    boolean complete = Boolean.parseBoolean(infile.nextLine());
                     TaskItem newItem = new TaskItem(title, description, LocalDate.parse(date), complete);
                     temp.add(newItem);
-                    System.out.println("File successfully loaded");
                 }
+                System.out.println("File successfully loaded");
                 return temp;
             } catch (FileNotFoundException e) {
                 System.out.println("(╯°□°）╯︵ ┻━┻ The file was not found. Please enter the correct file name or press X to return to menu.");
@@ -509,12 +538,13 @@ public class app {
                 ContactList temp = new ContactList();
                 File contactListFile = new File(file);
                 Scanner infile = new Scanner(contactListFile);
-                infile.useDelimiter(";");
-                while (infile.hasNext()) {
-                    String fname = infile.next();
-                    String lname = infile.next();
-                    String phonenum = infile.next();
-                    String email = infile.next();
+
+                while (infile.hasNextLine()) {
+                    String fname = infile.nextLine();
+                    String lname = infile.nextLine();
+                    String phonenum = infile.nextLine();
+                    String email = infile.nextLine();
+
                     ContactItem newItem = new ContactItem(fname, lname, phonenum, email);
                     temp.add(newItem);
                 }
