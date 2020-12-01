@@ -1,7 +1,7 @@
 /* Andrea Wormus
  * 11/30/2020
  * This program allows the user to create either a to-do list or a contact list.
- * The items in either list are saved in a file so the user can pull up a previos list after
+ * The items in either list are saved in a file so the user can pull up a previous list after
  * program completes.
  */
 
@@ -237,7 +237,7 @@ public class app {
                 isTaskValid(item, list);
                 return item;
             } catch (InvalidTaskSelection e) {
-                System.out.println("◉_◉ ERROR: The task you entered doesn't exist yet. Press any key to continue or press x to go to Operation Menu.");
+                System.out.println("◉_◉ ERROR: The task you entered doesn't exist yet. Press Y to continue or press x to go to Operation Menu.");
                 String next = in.next();
                 if(next.equalsIgnoreCase("x")){
                     displayTaskOperationMenu(list);
@@ -257,7 +257,7 @@ public class app {
                 isTaskValid(item, list);
                 return item;
             } catch (InvalidTaskSelection e) {
-                System.out.println("◉_◉ ERROR: The task you entered doesn't exist yet. Press any key to continue or press x to go to Operation Menu.");
+                System.out.println("◉_◉ ERROR: The task you entered doesn't exist yet. Press Y to continue or press x to go to Operation Menu.");
                 String next = in.next();
                 if(next.equalsIgnoreCase("x")){
                     displayTaskOperationMenu(list);
@@ -270,7 +270,7 @@ public class app {
         }
     }
     private static void isTaskValid(int item, TaskList list){
-        if(item >= list.getSize()){
+        if(item >= list.getSize() || item <= 0){
             throw new InvalidTaskSelection("◉_◉ ERROR: The task you entered doesn't exist yet. PLease enter a valid task number.");
         }
     }
@@ -401,7 +401,7 @@ public class app {
                 isContactNumberValid(item, list);
                 return item;
             } catch (InvalidTaskSelection e) {
-                System.out.println("◉_◉ ERROR: The contact you entered doesn't exist yet. Press any key to continue or press x to go to Operation Menu.");
+                System.out.println("◉_◉ ERROR: The contact you entered doesn't exist yet. Press Y to continue or press x to go to Operation Menu.");
                 String next = in.next();
                 if (next.equalsIgnoreCase("x")) {
                     displayContactOperationMenu(list);
@@ -410,7 +410,7 @@ public class app {
                 System.out.println("◉_◉ ERROR: Please enter the number of the contact you would like to edit.");
                 in.nextLine();
             } catch (InvalidContactSelection e){
-                System.out.println("◉_◉ ERROR: The contact you entered doesn't exist yet. Press any key to continue or press X to go to Operation Menu");
+                System.out.println("◉_◉ ERROR: The contact you entered doesn't exist yet. Press Y to continue or press X to go to Operation Menu");
                 String next = in.next();
                 if(next.equalsIgnoreCase("x")){
                     displayContactOperationMenu(list);
@@ -486,13 +486,13 @@ public class app {
                 isContactNumberValid(item, list);
                 return item;
             } catch (InvalidContactSelection e) {
-                System.out.println("◉_◉ ERROR: The contact you entered doesn't exist yet. Press any key to continue, or press x to go to Operation Menu.");
+                System.out.println("◉_◉ ERROR: The contact you entered doesn't exist yet. Press Y to continue, or press x to go to Operation Menu.");
                 String next = in.next();
                 if(next.equalsIgnoreCase("x")){
                     displayContactOperationMenu(list);
                 }
             } catch (InputMismatchException e) {
-                System.out.println("◉_◉ ERROR: You did not enter a valid number. Press 1 to continue, or press x to go to Operation Menu.");
+                System.out.println("◉_◉ ERROR: You did not enter a valid number.");
                 in.nextLine();
             }
         }
@@ -523,8 +523,8 @@ public class app {
                 return temp;
             } catch (FileNotFoundException e) {
                 System.out.println("(╯°□°）╯︵ ┻━┻ The file was not found. Please enter the correct file name or press X to return to menu.");
-                String next = in.next();
-                if(next.equalsIgnoreCase("x")){
+                file = in.next();
+                if(file.equalsIgnoreCase("x")){
                     taskMainMenu();
                 }
             }
@@ -552,8 +552,8 @@ public class app {
                 return temp;
             } catch (FileNotFoundException e) {
                 System.out.println("(╯°□°）╯︵ ┻━┻ The file was not found. Please enter the correct file name or press X to return to menu.");
-                String next = in.next();
-                if(next.equalsIgnoreCase("x")){
+                file = in.next();
+                if(file.equalsIgnoreCase("x")){
                     contactMainMenu();
                 }
                 in.nextLine();

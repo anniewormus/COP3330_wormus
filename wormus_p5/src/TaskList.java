@@ -68,7 +68,12 @@ public class TaskList {
 
     public void unmarkComplete(int index) {
         TaskItem task = taskList.get(index);
-        task.setCompleted(false);
+        if(task.getCompleted() == false){
+            System.out.println("ERROR: That task is not complete.");
+        }else{
+            task.setCompleted(false);
+        }
+
     }
 
     public int getSize() {
