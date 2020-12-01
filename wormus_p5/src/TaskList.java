@@ -45,7 +45,6 @@ public class TaskList {
 
     public void add(TaskItem task) {
         taskList.add(task);
-        System.out.println("\\ (•◡•) / \nTask was successfully added!");
     }
 
     public void edit(int index, String title, String description, LocalDate date) {

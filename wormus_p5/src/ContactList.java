@@ -21,7 +21,7 @@ public class ContactList{
         try (Formatter output = new Formatter(filename)) {
             for (int i = 0; i < contactList.size(); i++) {
                 ContactItem item = contactList.get(i);
-                output.format("%s;%s;%s;%s%n", item.getFirstName(), item.getLastName(), item.getEmail(), item.getPhoneNumber());
+                output.format("%s;%s;%s;%s%n", item.getFirstName(), item.getLastName(), item.getPhoneNumber(), item.getEmail());
             }
 
         } catch (FileNotFoundException e) {
@@ -33,11 +33,16 @@ public class ContactList{
 
     public void add(ContactItem contact){
         contactList.add(contact);
-        System.out.println("\\ (•◡•) / \nTask was successfully added!");
     }
 
-    public void edit(int index, String fname, String lname, String email, String phonenum){
+    public void edit(int index, String fname, String lname, String phonenum, String email){
         ContactItem item = contactList.get(index);
+
+        try {
+            contactCheck(fname, lname, phonenum, email);
+        } catch (InvalidContactItemException e) {
+            System.out.println("ERROR: You must enter at least one field.");
+        }
 
         item.setFirstName(fname);
         item.setLastName(lname);
@@ -45,9 +50,18 @@ public class ContactList{
         item.setPhoneNumber(phonenum);
     }
 
+    public void contactCheck(String fname, String lname, String phonenum, String email) throws InvalidContactItemException {
+        if(fname.isEmpty() && lname.isEmpty() && phonenum.isEmpty() && email.isEmpty()){
+            throw new InvalidContactItemException("");
+        }
+    }
+
     public void remove(int index){
         ContactItem contact = contactList.get(index);
         contactList.remove(contact);
     }
 
+    public int getSize() {
+        return contactList.size();
+    }
 }

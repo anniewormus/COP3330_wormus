@@ -42,4 +42,9 @@ public class ContactItem{
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return ("\tName: " + firstName + " " + lastName + "\n\tPhone Number: " + phoneNumber + "\n\tEmail: " + email);
+    }
 }
