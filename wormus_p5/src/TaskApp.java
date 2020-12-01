@@ -11,18 +11,19 @@ public class TaskApp {
     private Scanner in = new Scanner(System.in);
 
     public void taskMainMenu() {
-        int input = App.displayMainMenu();
+        App app = new App();
+        int input = app.displayMainMenu();
         switch (input) {
             case 1:
                 Tlist = new TaskList();
                 displayTaskOperationMenu(Tlist);
                 break;
             case 2:
-                Tlist = readTaskList(App.getFileName());
+                Tlist = readTaskList(app.getFileName());
                 displayTaskOperationMenu(Tlist);
                 break;
             case 3:
-                App.displayAppMenu();
+                app.displayAppMenu();
                 break;
         }
     }
@@ -108,7 +109,7 @@ public class TaskApp {
                 break;
         }
     }
-    private static void isTaskOpMenuValid(int input) {
+    private void isTaskOpMenuValid(int input) {
         if(!(input > 0 || input < 9)){
             throw new InvalidOptionException("◉_◉ ERROR: Your choice is not valid; please choose one of the options");
         }
@@ -161,7 +162,7 @@ public class TaskApp {
             }
         }
     }
-    private static void isTaskValid(int item, TaskList list){
+    private void isTaskValid(int item, TaskList list){
         if(item >= list.getSize() || item <= 0){
             throw new InvalidTaskSelection("◉_◉ ERROR: The task you entered doesn't exist yet. PLease enter a valid task number.");
         }
@@ -184,7 +185,7 @@ public class TaskApp {
         }
     }
     //title must be at least one character in length
-    private static void isTitleValid(String title){
+    private void isTitleValid(String title){
         if(title.length() < 1 || title.equals("")){
             throw new InvalidTitleException("ERROR: Title must be at least one character or more in length.");
         }

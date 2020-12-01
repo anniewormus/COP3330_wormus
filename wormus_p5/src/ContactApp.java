@@ -8,18 +8,19 @@ public class ContactApp {
     private Scanner in = new Scanner(System.in);
 
     public void contactMainMenu(){
-        int input = App.displayMainMenu();
+        App app = new App();
+        int input = app.displayMainMenu();
         switch(input){
             case 1:
                 Clist = new ContactList();
                 displayContactOperationMenu(Clist);
                 break;
             case 2:
-                Clist = readContactList(App.getFileName());
+                Clist = readContactList(app.getFileName());
                 displayContactOperationMenu(Clist);
                 break;
             case 3:
-                App.displayAppMenu();
+                app.displayAppMenu();
                 break;
         }
     }

@@ -10,13 +10,14 @@ import java.util.Scanner;
 
 public class App {
 
-    private static Scanner in = new Scanner(System.in);
+    private Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-        displayAppMenu();
+        App app = new App();
+        app.displayAppMenu();
     }
 
-    public static void displayAppMenu(){
+    public void displayAppMenu(){
         while(true){
             try{
                 System.out.println("SELECT YOUR APPLICATION\n1. Task List\n2. Contact List\n3. Quit");
@@ -34,7 +35,7 @@ public class App {
         }
     }
 
-    public static void applicationMenu(int input){
+    public void applicationMenu(int input){
         int choice;
         switch(input){
             case 1:
@@ -50,7 +51,7 @@ public class App {
         }
     }
 
-    public static int displayMainMenu() {
+    public int displayMainMenu() {
         while (true) {
             try {
                 System.out.println("MAIN MENU\n1. Create a new list\n2. Load an existing list\n3. Return to Application Menu");
@@ -66,13 +67,13 @@ public class App {
             }
         }
     }
-    private static void isMenuValid(int input) {
+    private void isMenuValid(int input) {
         if (!(input == 1 || input == 2 || input == 3)) {
             throw new InvalidOptionException("◉_◉ ERROR: Your choice is not valid; please choose one of the options");
         }
     }
 
-    public static String getFileName() {
+    public String getFileName() {
         System.out.println("Enter the filename to load: ");
         String file = in.nextLine();
         return file;
