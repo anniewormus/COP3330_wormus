@@ -89,7 +89,7 @@ public class ContactApp {
     }
 
     private static void isContactOpMenuValid(int input) {
-        if(!(input > 0 || input < 7)){
+        if(!(input > 0 || input <= 7)){
             throw new InvalidOptionException("◉_◉ ERROR: Your choice is not valid; please choose one of the options");
         }
     }

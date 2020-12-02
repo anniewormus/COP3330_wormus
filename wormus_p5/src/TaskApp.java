@@ -163,7 +163,7 @@ public class TaskApp {
         }
     }
     private void isTaskValid(int item, TaskList list){
-        if(item >= list.getSize() || item <= 0){
+        if(item >= list.getSize() || item < 0){
             throw new InvalidTaskSelection("◉_◉ ERROR: The task you entered doesn't exist yet. PLease enter a valid task number.");
         }
     }

@@ -1,0 +1,716 @@
+SELECT YOUR APPLICATION
+1. Task List
+2. Contact List
+3. Quit
+1
+MAIN MENU
+1. Create a new list
+2. Load an existing list
+3. Return to Application Menu
+1
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+¯\_(ツ)_/¯ You don't have any items to print
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+3
+¯\_(ツ)_/¯ You don't have any items to edit
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+4
+¯\_(ツ)_/¯ You don't have any items to remove
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+5
+¯\_(ツ)_/¯ You don't have any items to complete
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+6
+¯\_(ツ)_/¯ You don't have any items
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+2
+Title:
+Task 1
+Description:
+homework
+Date (YYYY-MM-DD):
+2020-12-05
+Task successfully added!
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+2
+Title:
+task 2
+Description:
+clean
+Date (YYYY-MM-DD):
+2020-12-04
+Task successfully added!
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+1) [2020-12-04] task 2: clean
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+2
+Title:
+task 3
+Description:
+work out
+Date (YYYY-MM-DD):
+2020-12-06
+Task successfully added!
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-06] task 3: work out
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+2
+Title:
+
+ERROR: Title must be at least one character or more in length.
+Title:
+task 4
+Description:
+
+Date (YYYY-MM-DD):
+
+ERROR: The date you entered was not valid. Pleas re-enter in the form YYYY-MM-DD.
+Date (YYYY-MM-DD):
+2020-20-20
+ERROR: The date you entered was not valid. Pleas re-enter in the form YYYY-MM-DD.
+Date (YYYY-MM-DD):
+2020-12-20
+Task successfully added!
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-06] task 3: work out
+3) [2020-12-20] task 4:
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+3
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-06] task 3: work out
+3) [2020-12-20] task 4:
+Which item would you like to edit:
+4
+◉_◉ ERROR: The task you entered doesn't exist yet. Press Y to continue or press x to go to Operation Menu.
+y
+Which item would you like to edit:
+2
+Title:
+task 3
+Description:
+work out
+Date (YYYY-MM-DD):
+2020-12-12
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-12] task 3: work out
+3) [2020-12-20] task 4:
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+4
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-12] task 3: work out
+3) [2020-12-20] task 4:
+Which task would you like to remove:
+4
+◉_◉ ERROR: The task you entered doesn't exist yet. Press Y to continue or press x to go to Operation Menu.
+y
+Task Number:
+3
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-12] task 3: work out
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+5
+Current Tasks-----------
+0) [2020-12-05] Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-12] task 3: work out
+Which task would you like to complete:
+3
+◉_◉ ERROR: The task you entered doesn't exist yet. Press Y to continue or press x to go to Operation Menu.
+y
+Task Number:
+0
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+5
+Current Tasks-----------
+0) *** 2020-12-05 Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-12] task 3: work out
+Which task would you like to complete:
+1
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+Current Tasks-----------
+0) *** 2020-12-05 Task 1: homework
+1) *** 2020-12-04 task 2: clean
+2) [2020-12-12] task 3: work out
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+6
+Current Tasks-----------
+0) *** 2020-12-05 Task 1: homework
+1) *** 2020-12-04 task 2: clean
+2) [2020-12-12] task 3: work out
+Which task would you like to un-complete:
+2
+ERROR: That task is not complete.
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+6
+Current Tasks-----------
+0) *** 2020-12-05 Task 1: homework
+1) *** 2020-12-04 task 2: clean
+2) [2020-12-12] task 3: work out
+Which task would you like to un-complete:
+4
+◉_◉ ERROR: The task you entered doesn't exist yet. Press Y to continue or press x to go to Operation Menu.
+y
+Task Number:
+1
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+1
+Current Tasks-----------
+0) *** 2020-12-05 Task 1: homework
+1) [2020-12-04] task 2: clean
+2) [2020-12-12] task 3: work out
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+7
+What do you want to name your list:
+tasklist1.txt
+OPERATION MENU
+1. View list
+2. Add a task
+3. Edit a task
+4. Remove a task
+5. Mark task as completed
+6. Unmark task as complete
+7. Save current list
+8. Exit to main menu
+8
+MAIN MENU
+1. Create a new list
+2. Load an existing list
+3. Return to Application Menu
+3
+SELECT YOUR APPLICATION
+1. Task List
+2. Contact List
+3. Quit
+2
+MAIN MENU
+1. Create a new list
+2. Load an existing list
+3. Return to Application Menu
+2
+Enter the filename to load:
+dfkj
+(╯°□°）╯︵ ┻━┻ The file was not found. Please enter the correct file name or press X to return to menu.
+x
+MAIN MENU
+1. Create a new list
+2. Load an existing list
+3. Return to Application Menu
+1
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+1
+¯\_(ツ)_/¯ You don't have any contacts to view
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+3
+¯\_(ツ)_/¯ You don't have any contacts to edit
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+4
+¯\_(ツ)_/¯ You don't have any contacts to remove
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+2
+First Name:
+jay
+Last Name:
+z
+Email:
+bigpimpin@gmail.com
+Phone Number:
+000-000-0000
+Contact added successfully!
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+1
+Current Contacts-----------
+0) 	Name: jay z
+	Phone Number: 000-000-0000
+	Email: bigpimpin@gmail.com
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+2
+First Name:
+beyonce
+Last Name:
+knowles
+Email:
+singlelady@gmail.com
+Phone Number:
+111-111-1111
+Contact added successfully!
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+1
+Current Contacts-----------
+0) 	Name: jay z
+	Phone Number: 000-000-0000
+	Email: bigpimpin@gmail.com
+1) 	Name: beyonce knowles
+	Phone Number: 111-111-1111
+	Email: singlelady@gmail.com
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+2
+First Name:
+blue
+Last Name:
+ivy
+Email:
+blueivy@gmail.com
+Phone Number:
+222-222-2222
+Contact added successfully!
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+3
+Current Contacts-----------
+0) 	Name: jay z
+	Phone Number: 000-000-0000
+	Email: bigpimpin@gmail.com
+1) 	Name: beyonce knowles
+	Phone Number: 111-111-1111
+	Email: singlelady@gmail.com
+2) 	Name: blue ivy
+	Phone Number: 222-222-2222
+	Email: blueivy@gmail.com
+Which item would you like to edit:
+3
+◉_◉ ERROR: The contact you entered doesn't exist yet. Press Y to continue or press X to go to Operation Menu
+y
+Which item would you like to edit:
+2
+First Name:
+blue
+Last Name:
+ivy
+Phone Number:
+333-333-3333
+Email:
+babyblue@gmail.com
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+3
+Current Contacts-----------
+0) 	Name: jay z
+	Phone Number: 000-000-0000
+	Email: bigpimpin@gmail.com
+1) 	Name: beyonce knowles
+	Phone Number: 111-111-1111
+	Email: singlelady@gmail.com
+2) 	Name: blue ivy
+	Phone Number: 333-333-3333
+	Email: babyblue@gmail.com
+Which item would you like to edit:
+1
+First Name:
+
+Last Name:
+
+Phone Number:
+
+Email:
+
+ERROR: You must enter at least one field.
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+1
+Current Contacts-----------
+0) 	Name: jay z
+	Phone Number: 000-000-0000
+	Email: bigpimpin@gmail.com
+1) 	Name: beyonce knowles
+	Phone Number: 111-111-1111
+	Email: singlelady@gmail.com
+2) 	Name: blue ivy
+	Phone Number: 333-333-3333
+	Email: babyblue@gmail.com
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+2
+First Name:
+
+Last Name:
+
+Email:
+
+Phone Number:
+
+ERROR: You must enter at least 1 contact field. Please try again.
+First Name:
+kim
+Last Name:
+kardashian
+Email:
+kimmyk@gmail.com
+Phone Number:
+444-444-4444
+
+Contact added successfully!
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+4
+Current Contacts-----------
+0) 	Name: jay z
+	Phone Number: 000-000-0000
+	Email: bigpimpin@gmail.com
+1) 	Name: beyonce knowles
+	Phone Number: 111-111-1111
+	Email: singlelady@gmail.com
+2) 	Name: blue ivy
+	Phone Number: 333-333-3333
+	Email: babyblue@gmail.com
+3) 	Name: kim kardashian
+	Phone Number: 444-444-4444
+	Email: kimmyk@gmail.com
+Which contact would you like to remove?
+4
+◉_◉ ERROR: The contact you entered doesn't exist yet. Press Y to continue, or press x to go to Operation Menu.
+y
+Which contact would you like to remove?
+3
+Contact successfully removed
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+1
+Current Contacts-----------
+0) 	Name: jay z
+	Phone Number: 000-000-0000
+	Email: bigpimpin@gmail.com
+1) 	Name: beyonce knowles
+	Phone Number: 111-111-1111
+	Email: singlelady@gmail.com
+2) 	Name: blue ivy
+	Phone Number: 333-333-3333
+	Email: babyblue@gmail.com
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+5
+What do you want to name your list:
+contactlist.txt
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+7
+◉_◉ ERROR: Your choice is not valid; please choose one of the options
+OPERATION MENU
+1. View list
+2. Add a contact
+3. Edit a contact
+4. Remove a contact
+5. Save current list
+6. Exit to main menu
+6
+MAIN MENU
+1. Create a new list
+2. Load an existing list
+3. Return to Application Menu
+3
+SELECT YOUR APPLICATION
+1. Task List
+2. Contact List
+3. Quit
+3
+
+Process finished with exit code 0
