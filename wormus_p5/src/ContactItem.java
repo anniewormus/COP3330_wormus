@@ -43,6 +43,16 @@ public class ContactItem{
         this.email = email;
     }
 
+    public void edit(String firstName, String lastName, String phoneNumber, String email) throws InvalidContactItemException {
+        if(firstName.isEmpty() && lastName.isEmpty() && phoneNumber.isEmpty() && email.isEmpty()){
+            throw new InvalidContactItemException("ERROR: Your contact must contain at least one field.");
+        }else{
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+        }
+    }
     @Override
     public String toString() {
         return ("\tName: " + firstName + " " + lastName + "\n\tPhone Number: " + phoneNumber + "\n\tEmail: " + email);

@@ -40,11 +40,11 @@ public class ContactList{
 
         try {
             contactCheck(fname, lname, phonenum, email);
+
         } catch (InvalidContactItemException e) {
             System.out.println("ERROR: You must enter at least one field.");
             return;
         }
-
         item.setFirstName(fname);
         item.setLastName(lname);
         item.setEmail(email);
@@ -53,7 +53,7 @@ public class ContactList{
 
     public void contactCheck(String fname, String lname, String phonenum, String email) throws InvalidContactItemException {
         if(fname.isEmpty() && lname.isEmpty() && phonenum.isEmpty() && email.isEmpty()){
-            throw new InvalidContactItemException("");
+            throw new InvalidContactItemException("ERROR: You must enter at least one field.");
         }
     }
 
@@ -64,5 +64,10 @@ public class ContactList{
 
     public int getSize() {
         return contactList.size();
+    }
+
+    public String getEntry(int index){
+        ContactItem contact = contactList.get(index);
+        return ("\tName: " + contact.getFirstName() + " " + contact.getLastName() + "\n\tPhone Number: " + contact.getPhoneNumber() + "\n\tEmail: " + contact.getEmail());
     }
 }

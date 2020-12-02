@@ -106,7 +106,6 @@ public class ContactApp {
                 System.out.println("ERROR: You must enter at least 1 contact field. Please try again.");
             }
         }
-
     }
 
     private int editContactItem(ContactList list) {
@@ -214,7 +213,7 @@ public class ContactApp {
             }
         }
     }
-    private ContactList readContactList(String file) {
+    public ContactList readContactList(String file) {
         while (true) {
             try {
                 ContactList temp = new ContactList();
